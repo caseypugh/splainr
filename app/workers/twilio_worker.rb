@@ -11,10 +11,10 @@ class TwilioWorker
         body: message
       })
     else
-      @client.account.calls.create({
-        :to => phone_number, 
+      client.account.calls.create({
         :from => '+19177467982', 
-        :url => "http://splainr.herokuapp.com/mansplainr-call.xml?message=",
+        :to => phone_number, 
+        :url => "http://splainr.herokuapp.com/mansplainr-call.xml",
         :method => 'GET',  
         :fallback_method => 'GET',  
         :status_callback_method => 'GET',    
