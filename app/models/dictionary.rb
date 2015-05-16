@@ -8,7 +8,7 @@ class Dictionary
 } 
     },
     { 
-      name: %w{mainsplainer}, 
+      name: %w{mansplainer}, 
       definition: %{Onbnoxious bro} 
     },
     { 
@@ -47,13 +47,36 @@ class Dictionary
 
   PREFIXES = [
     "Oh no no no. You are totally wrong about @query@.",
-    "Oh you want to know about @query@? Of course you do."
+    "Oh you want to know about @query@? Of course you do.",
+    "Well the thing about @query@ is...Hey hold on. It didn’t really seem like you were listening. Yeah if you could just listen up while I tell you about @query@? Shhhh. It’s going to take your whole focus to understand what I’m saying here. ",
+    "I didn't really hear that last thing you said because I was thinking about all the the stuff I want to say about @query@.",
+    "I just heard about @query@ five minutes ago, but I am very knowledgeable about it. ",
+    "This may really bore you..."
   ]
+  
+  MODIFIERS = [
+    "You probably don't even know that @query@ is",
+    "So as you may or may not be able to tell, @query@ is",
+    "It might help if you think about it like a shoe store, since that’s something you know. If @query@ were a shoe store, it would be a shoe store that is",
+    "Basically anyone who knows anything about @query@ knows that it is"
+    ]
 
   SUFFIXES = [
     "Basically @query@ is the answer.",
-    "Pretty simple, really."
+    "Pretty simple, really.",
+    "And that's not all I could say.",
+    "Oh that's what you just said? Your idea sounds so much better when I rephrase it.",
+    "If you didn’t get all that, just ask your dad about it. "
+    
   ]
+  PHONE = [
+    { 
+      name: ['beer', 'beers','craft beer'], 
+      definition: %{asldfj}
+      
+  ]
+
+} 
 
   def self.lookup(name)
     name = name.downcase.strip
