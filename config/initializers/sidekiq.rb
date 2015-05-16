@@ -1,6 +1,6 @@
-# provider = ENV.fetch('SIDEKIQ_REDIS_PROVIDER', 'SIDEKIQ_REDIS_URL')
-# url      = ENV[provider] || ENV['SIDEKIQ_REDIS_URL'] || ENV['REDIS_URL']
-# timeout  = Float(ENV.fetch('REDIS_TIMEOUT', 0.5))
+# # provider = ENV.fetch('SIDEKIQ_REDIS_PROVIDER', 'SIDEKIQ_REDIS_URL')
+# # url      = ENV[provider] || ENV['SIDEKIQ_REDIS_URL'] || ENV['REDIS_URL']
+# # timeout  = Float(ENV.fetch('REDIS_TIMEOUT', 0.5))
 
 # Sidekiq.configure_client do |config|
 #   config.redis = {
@@ -12,7 +12,6 @@
 # end
 
 # Sidekiq.configure_server do |config|
-#   require 'sidekiq/pro/reliable_fetch'
 #   config.poll_interval = 10
 #   config.redis = {
 #     url: url,

@@ -1,22 +1,25 @@
 class Search
   require 'wikipedia'
 
-  def self.query(query)
-    search = Search.new
-    search.results(query)
+  def initialize
   end
 
-  def results(query)
-    wikipedia_search(query)
-    # google_search(query)
+  def define(query)
+    find(query)
   end
 
 protected
 
+  def find(query)
+    query = query.downcase.strip
+    wikipedia_search(query)
+    # google_search(query)
+  end
+
   def wikipedia_search(query)
     content = Wikipedia.find(query).content
     if content
-      puts content
+      # puts content
       # paragraph = content.match(/\{\{Infobox.+?\n\}\}\n(.+?)\n/im)
       paragraph = content.gsub(/\{\{.+?\}\}/, '')
       paragraph = paragraph.gsub(/\{\{.+?\}\}/m, '')
