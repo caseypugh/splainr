@@ -7,7 +7,7 @@ gem 'twilio-ruby', '~> 4.1.0'
 gem 'json', '~> 1.0'
 gem 'dalli', '~> 2.0'
 gem 'redis', '~> 3.0'
-
+gem 'sidekiq-pro', '~> 1.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -24,7 +24,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -34,4 +34,5 @@ gem 'jquery-rails'
 
 group :development do
   gem 'better_errors'
+  gem 'foreman'
 end

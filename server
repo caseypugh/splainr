@@ -1,0 +1,8 @@
+ps -ef | grep sidekiq | grep -v grep | awk '{print $2}' | xargs kill -9
+ps -ef | grep foreman | grep -v grep | awk '{print $2}' | xargs kill -9
+ps -ef | grep unicorn | grep -v grep | awk '{print $2}' | xargs kill -9
+touch .env.local
+touch ~/.pow/`basename $PWD`
+echo 5000 > ~/.pow/`basename $PWD`
+redis-cli flushall
+foreman start --env .env,.env.local
