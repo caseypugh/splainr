@@ -18,7 +18,10 @@ class Dictionary
     },
     { 
       name: %w{brainstorming brainstorm}, 
-      definition: %{Oh man, wait until you hear the way that I brainstorm. It’s totally off the wall. I’ve talked to a lot of people about brainstorming and this is definitely the best way. First, you take the problem you need to solve. And you start thinking about ideas, by writing them down on paper. When you’re done thinking, then you look at all the ideas that you have. And you pick the best one. BOOM. That’s my version of brainstorming.} 
+      definition: [
+        'Oh man, wait until you hear the way that I brainstorm. It’s totally off the wall. I’ve talked to a lot of people about brainstorming and this is definitely the best way.',
+        'First, you take the problem you need to solve. And you start thinking about ideas, by writing them down on paper. When you’re done thinking, then you look at all the ideas that you have. And you pick the best one. BOOM. That’s my version of brainstorming.',
+        ]
     },
     { 
       name: ['bechdel test', 'the bechdel test'], 
@@ -30,7 +33,9 @@ class Dictionary
     },
     { 
       name: ['deflategate', 'Tom Brady', 'The Patriots', 'football'], 
-      definition: "Oh you want to hear about Deflategate? Yeah that’s a sports things, so I didn’t know if that’s really what you were asking about at first. This might be over your head, but Deflategate is a NFL controversy, stemming from an allegation that the New England Patriots used underinflated footballs in an AFC Championship game. Just so you know, in football the idea is to get the ball to the endzone. That’s how the points happen. "
+      definition: [
+        'Oh you want to hear about Deflategate? Yeah that’s a sports things, so I didn’t know if that’s really what you were asking about at first.', 
+      'This might be over your head, but Deflategate is a NFL controversy, stemming from an allegation that the New England Patriots used underinflated footballs in an AFC Championship game. Just so you know, in football the idea is to get the ball to the endzone. That’s how the points happen.'
     },
     { 
       name: ['New York Yankees', 'Yankees lineup','baseball'], 
@@ -40,7 +45,8 @@ class Dictionary
       name: ['comedy', 'jokes', 'real comedy'],
       definition: [
         'I didn’t really hear that last thing you said because I was thinking about all the the stuff I want to say about comedy.', 
-        'So as you probably don’t know, comedy is any discourse generally intended to be humorous or to amuse by inducing laughter. Let me paint you a picture: Satire and political satire use comedy to portray persons or social institutions as ridiculous or corrupt. That’s why, like, if you think a joke is offensive, you’re probably just not listening to it for its subversive message, you know? And you have to just accept that everything that a stand-up comic writes is coming from a good intentions, and is probably a great joke.'
+        'So as you probably don’t know, comedy is any discourse generally intended to be humorous or to amuse by inducing laughter. Let me paint you a picture: Satire and political satire use comedy to portray persons or social institutions as ridiculous or corrupt.', 
+        'That’s why, like, if you think a joke is offensive, you’re probably just not listening to it for its subversive message, you know? And you have to just accept that everything that a stand-up comic writes is coming from a good intentions, and is probably a great joke.'
       ]
     },
     {
