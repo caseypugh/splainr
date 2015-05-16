@@ -5,15 +5,8 @@ class SplainrWorker
     # number = Number::create_from_number!(phone_number, message)
     translation = SplainrTranslator::execute(message)
 
-    Rails.logger.debug message
-    Rails.logger.debug translation
-
-    @client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN'] 
- 
-    @client.account.messages.create({
-      :from => '+19177467982', 
-      :to => phone_number, 
-      :body => translation,  
-    })
+    TwilioWorker.preform_async(phone_number, translation)
+    # Rails.logger.debug message
+    # Rails.logger.debug translation
   end
 end
