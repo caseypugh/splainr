@@ -15,12 +15,20 @@ protected
 
   def wikipedia_search(query)
     content = Wikipedia.find(query).content
-    puts content
-    paragraph = content.match(/\{\{Infobox.+?\n\}\}\n(.+?)\n/im)[1]
-    wiki = WikiCloth::Parser.new({
-      data: paragraph,
-      params: {} 
-    })
-    text = Sanitize.fragment(wiki.to_html).strip.gsub(/\[\d+\]/,'')
+    if content
+      puts content
+      # paragraph = content.match(/\{\{Infobox.+?\n\}\}\n(.+?)\n/im)
+      paragraph = content.gsub(/\{\{.+?\}\}/, '')
+      paragraph = paragraph.gsub(/\{\{.+?\}\}/m, '')
+      paragraph = paragraph.match(/.+?('{2,5}.+?'{2,5}.+?)\n/im)
+
+      if paragraph
+        wiki = WikiCloth::Parser.new({
+          data: paragraph[1],
+          params: {} 
+        })
+        text = Sanitize.fragment(wiki.to_html).strip.gsub(/\[\d+\]/,'')
+      end
+    end
   end
 end
