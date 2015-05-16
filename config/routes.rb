@@ -1,5 +1,8 @@
 Splainr::Application.routes.draw do
 
+  get '/mansplainr-call', to: 'home#mansplainr_call'
+  post '/mansplainr-call', to: 'home#mansplainr_call'
+
   get '/mansplainr-response', to: 'home#mansplainr_response'
   post '/mansplainr-response', to: 'home#mansplainr_response'
 

@@ -1,14 +1,25 @@
 class TwilioWorker
   include Sidekiq::Worker
 
-  def perform(phone_number, message)
-    puts 'HELLO'
+  def perform(phone_number, message, type = 'text')
     client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN'] 
  
-    client.account.messages.create({
-      from: '+19177467982', 
-      to:   phone_number, 
-      body: message
-    })
+    if type == 'test'
+      client.account.messages.create({
+        from: '+19177467982', 
+        to:   phone_number, 
+        body: message
+      })
+    else
+      @client.account.calls.create({
+        :to => phone_number, 
+        :from => '+19177467982', 
+        :url => "http://splainr.herokuapp.com/mansplainr-call.xml?message=",
+        :method => 'GET',  
+        :fallback_method => 'GET',  
+        :status_callback_method => 'GET',    
+        :record => 'false'
+      })
+    end
   end
 end
