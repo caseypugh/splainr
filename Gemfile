@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 gem 'rails', '3.2.21'
-gem 'pg'
+gem 'sqlite3'
 
 gem 'json', '~> 1.0'
 gem 'dalli', '~> 2.0'

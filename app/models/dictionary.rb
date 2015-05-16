@@ -44,7 +44,7 @@ class Dictionary
       ]
     },
     {
-      name: %{are women funny},
+      name: 'are women funny',
       definition: ['hahahahha', 'Ask me about real comedy some time.']
     }
   ]

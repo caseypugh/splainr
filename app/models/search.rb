@@ -13,8 +13,7 @@ protected
   def find(query)
     query = query.strip
     response = dictionary_search(query)
-    response = wikipedia_search(query) unless response
-    # google_search(query)
+    response = wikipedia_search(query) if !response || response.first.blank?
     response
   end
 
@@ -43,7 +42,6 @@ protected
   end
 
   def mansplain(query, text)
-    # text
-    Dictionary::prefix_lookup(query) + ' ' + text + ' ' + Dictionary::suffix_lookup(query)
+    [Dictionary::prefix_lookup(query), text, Dictionary::suffix_lookup(query)]
   end
 end
