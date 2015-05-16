@@ -1,1 +1,2 @@
 web:            [ "$RAILS_ENV" = "production" ] && bin/start-pgbouncer-stunnel bundle exec unicorn -c ./config/unicorn.rb || bundle exec unicorn -c ./config/unicorn.rb
+worker:         bundle exec sidekiq -e $RAILS_ENV -c $SIDEKIQ_CONCURRENCY

@@ -11,26 +11,34 @@ class Search
 protected
 
   def find(query)
-    query = query.downcase.strip
-    wikipedia_search(query)
+    query = query.strip
+    response = dictionary_search(query)
+    response = wikipedia_search(query) unless response
     # google_search(query)
+    response
+  end
+
+  def dictionary_search(query)
+    Dictionary::lookup(query)
   end
 
   def wikipedia_search(query)
-    content = Wikipedia.find(query).content
-    if content
-      # puts content
-      # paragraph = content.match(/\{\{Infobox.+?\n\}\}\n(.+?)\n/im)
-      paragraph = content.gsub(/\{\{.+?\}\}/, '')
-      paragraph = paragraph.gsub(/\{\{.+?\}\}/m, '')
-      paragraph = paragraph.match(/.+?('{2,5}.+?'{2,5}.+?)\n/im)
+    content = Rails.cache.fetch("/wikipedia/#{query}", expires_in: 1.day, race_condition_ttl: 1.minute) do
+      Wikipedia.find(query.downcase.titlecase).content
+    end
 
+    if content
+      paragraph = content.gsub(/\{\{([^\{\{]*?)\}\}/m, '')
+      paragraph = paragraph.gsub(/\{\{([^\{\{]*?)\}\}/m, '')
+      paragraph = paragraph.gsub(/\{\{([^\{\{]*?)\}\}/m, '')
+      paragraph = paragraph.match(/('{2,5}.+?'{2,5}.+?)\n/im)
       if paragraph
         wiki = WikiCloth::Parser.new({
           data: paragraph[1],
           params: {} 
         })
-        text = Sanitize.fragment(wiki.to_html).strip.gsub(/\[\d+\]/,'')
+        
+        return Sanitize.fragment(wiki.to_html).strip.gsub(/\[\d+\]/,'')
       end
     end
   end

@@ -4,17 +4,10 @@ class HomeController < ApplicationController
   end
 
   def mansplainr_response
-    mansplaination = SplainrTranslator::execute(params[:Body])
-    # sender = params[:From]
-    # friends = {
-    #   "+14153334444" => "Curious George",
-    #   "+14158157775" => "Boots",
-    #   "+14155551234" => "Virgil"
-    # }
-    twiml = Twilio::TwiML::Response.new do |r|
-      r.Message mansplaination
+    SplainrWorker.new.perform(params[:From], params[:Body])
+
+    respond_to do |format|
+      format.xml { render xml: { success: true } }
     end
-    
-    @response = twiml.text
   end
 end
