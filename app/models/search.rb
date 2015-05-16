@@ -42,6 +42,6 @@ protected
   end
 
   def mansplain(query, text)
-    [Dictionary::prefix_lookup(query), text, Dictionary::suffix_lookup(query)]
+    [Dictionary::prefix_lookup(query), text + ' ' + Dictionary::suffix_lookup(query)]
   end
 end
