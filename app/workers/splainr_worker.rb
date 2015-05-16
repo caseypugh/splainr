@@ -6,7 +6,7 @@ class SplainrWorker
     translation = SplainrTranslator::execute(message)
 
     # Rails.logger.debug message
-    TwilioWorker.perform_async(phone_number, translation)
+    TwilioWorker.new.perform(phone_number, translation)
     
     # TwilioWorker.perform_in(2.seconds, phone_number, translation)
   end

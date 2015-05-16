@@ -43,11 +43,7 @@ protected
   end
 
   def mansplain(query, text)
-    text
-    # mansplain_prefix + text + mansplain_suffix
-  end
-
-  def mansplain_prefix(query)
-
+    # text
+    Dictionary::prefix_lookup(query) + ' ' + text + ' ' + Dictionary::suffix_lookup(query)
   end
 end

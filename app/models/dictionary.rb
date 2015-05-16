@@ -35,17 +35,34 @@ Everyone’s real problem with modern feminism is that it’s so angry. Maybe if
       name: ['New York Yankees', 'Yankees lineup','baseball'], 
       definition: "Hey just so you know, in baseball the idea is to get all the way AROUND the bases. That’s how the game works. And the starting lineup for the Yankees is obviously Ellsbury, Gardner, Rodriguez, Teixeira, McCann, Beltran, Headley, Drew. And duh, Gregorius. "
     }
+  ]
 
+  PREFIXES = [
+    "Oh no no no. You are totally wrong about @query@.",
+    "Oh you want to know about @query@? Of course you do."
+  ]
+
+  SUFFIXES = [
+    "Basically @query@ is the answer.",
+    "Pretty simple, really."
   ]
 
   def self.lookup(name)
     name = name.downcase.strip
 
     DB.each do |entry|
-      return entry[:definition] if entry[:name].include?(name)
+      return entry[:definition] if entry[:name].map{|name|name.downcase }.include?(name)
     end
     
     nil
+  end
+
+  def self.prefix_lookup(query)
+    PREFIXES.shuffle.first.gsub('@query@', query)
+  end
+
+  def self.suffix_lookup(query)
+    SUFFIXES.shuffle.first.gsub('@query@', query)
   end
 
 end
