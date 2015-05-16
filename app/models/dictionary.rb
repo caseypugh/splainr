@@ -3,9 +3,9 @@ class Dictionary
   DB = [
     { 
       name: %w{feminism feminist feminists}, 
-      definition: %{Ok. Here’s the thing about feminism. Yes, it’s a movement for equal rights. But everyone knows that you could put that energy to better use. Yeah there’s a wage gap and absurdly low numbers of female representatives in politics, but maybe you’re just taking it wrong! And those are hardly important problems in today’s world, if you compare them to poverty in Africa, or pollution, or human trafficking. Anyway, the sexism that we have today is just the leftovers of, like, two thousand years of patriarchy! It can’t just change overnight, you know! And hey, it’s probably going to take another two thousand years before mentalities completely change. So why bother trying?
+      definition: ['Ok. Here’s the thing about feminism. Yes, it’s a movement for equal rights. But everyone knows that you could put that energy to better use. Yeah there’s a wage gap and absurdly low numbers of female representatives in politics, but maybe you’re just taking it wrong! And those are hardly important problems in today’s world, if you compare them to poverty in Africa, or pollution, or human trafficking. Anyway, the sexism that we have today is just the leftovers of, like, two thousand years of patriarchy! It can’t just change overnight, you know! And hey, it’s probably going to take another two thousand years before mentalities completely change. So why bother trying?', 'Everyone’s real problem with modern feminism is that it’s so angry. Maybe if you were nicer, your point would be more widely accepted.']
 
-Everyone’s real problem with modern feminism is that it’s so angry. Maybe if you were nicer, your point would be more widely accepted.} 
+} 
     },
     { 
       name: %w{mainsplainer}, 
@@ -34,6 +34,14 @@ Everyone’s real problem with modern feminism is that it’s so angry. Maybe if
     { 
       name: ['New York Yankees', 'Yankees lineup','baseball'], 
       definition: "Hey just so you know, in baseball the idea is to get all the way AROUND the bases. That’s how the game works. And the starting lineup for the Yankees is obviously Ellsbury, Gardner, Rodriguez, Teixeira, McCann, Beltran, Headley, Drew. And duh, Gregorius. "
+    },
+    {
+      name: ['comedy', 'jokes', 'real comedy'],
+      definition: ['I didn’t really hear that last thing you said because I was thinking about all the the stuff I want to say about comedy.', 'o as you probably don’t know, comedy is any discourse generally intended to be humorous or to amuse by inducing laughter. Let me paint you a picture: Satire and political satire use comedy to portray persons or social institutions as ridiculous or corrupt. That’s why, like, if you think a joke is offensive, you’re probably just not listening to it for its subversive message, you know? And you have to just accept that everything that a stand-up comic writes is coming from a good intentions, and is probably a great joke. '
+    },
+    {
+      name: %{are women funny},
+      definition: ['hahahahha', 'Ask me about real comedy some time.']
     }
   ]
 
