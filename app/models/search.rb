@@ -37,8 +37,17 @@ protected
           data: paragraph[1],
           params: {} 
         })
-        return Sanitize.fragment(wiki.to_html).strip.gsub(/\[\d+\]/,'')
+        return mansplain(query, Sanitize.fragment(wiki.to_html).strip.gsub(/\[\d+\]/,''))
       end
     end
+  end
+
+  def mansplain(query, text)
+    text
+    # mansplain_prefix + text + mansplain_suffix
+  end
+
+  def mansplain_prefix(query)
+
   end
 end
