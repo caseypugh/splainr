@@ -4,12 +4,15 @@ class SplainrTranslator
     search = Search.new
     results = search.define(query)
 
-    results.map{ |text|
-      self.shorten(text, 400)
-    }.flatten
+    if results.present?
+      return results.map{ |text|
+        self.shorten(text, 400)
+      }.flatten
+    end 
+    return nil
   end
 
-  def self.shorten(text, length)
+  def self.shorten(text, length, divisor = 2)
     if text.split(' ').count > length
       explosion = text.split(' ')
       arr1 = explosion[0, length].join(' ') + '...'

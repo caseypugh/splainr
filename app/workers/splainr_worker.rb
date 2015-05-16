@@ -8,6 +8,10 @@ class SplainrWorker
     sleep_timer = 0
     is_phone = false
 
+    if translation.blank?
+      TwilioWorker.new.perform(phone_number, 'Ehhhh... boring.', false)
+    end
+
     translation.each do |text|
       is_phone = true and next if text == Dictionary::IS_PHONE
 
