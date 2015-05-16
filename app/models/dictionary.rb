@@ -57,7 +57,7 @@ class Dictionary
     { 
       phone: true,
       name: %{gender}, 
-      definition: %{This is pretty complex, so I thought I’d call. You know what sucks about being a woman? The pay gap. The cool thing? Having boobs and being able to have sex whenever you want. Everyone knows that.}
+      definition: %{Hey. This is pretty complex, so I thought I would call. You know what sucks about being a woman? The pay gap. The cool thing? Having boobs and being able to have sex whenever you want. Everyone knows that! Goodbye.}
     }
   ]
 
