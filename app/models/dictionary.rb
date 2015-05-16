@@ -9,8 +9,8 @@ class Dictionary
       ]
     },
     { 
-      name: %w{mansplainer}, 
-      definition: %{Onbnoxious bro} 
+      name: %w{mansplainer, mansplaining}, 
+      definition: %{nah bro, too heavy} 
     },
     { 
       name: %w{computer computers}, 
@@ -81,8 +81,8 @@ class Dictionary
 
   PHONE = [
     { 
-      name: ['beer', 'beers','craft beer'], 
-      definition: %{asldfj}
+      name: %{gender}, 
+      definition: %{This is pretty complex, so I thought I’d call. You know what sucks about being a woman? The pay gap. The cool thing? Having boobs and being able to have sex whenever you want. Everyone knows that.}
     }
   ]
 
