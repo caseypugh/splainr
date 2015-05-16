@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
 
   def mansplainr_call
-    @say = Dictionary::PHONE.first[:definition]
+    @say = Dictionary::DB.reject{|item| item[:phone].blank?}.first[:definition]
     respond_to do |format|
       format.xml 
     end
