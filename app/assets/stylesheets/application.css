@@ -9,5 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require foundation 
  *= require_tree .
  */
+
+
+.banner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('http://static.fjcdn.com/comments/Quot+hey+bro+last+night+i+was+totally+slammin+jaegers+and+_68879db680e368cc0c2395c8b2f53902.jpg');
+  min-height: 500px;
+}
