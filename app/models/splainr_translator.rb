@@ -5,7 +5,7 @@ class SplainrTranslator
     results = search.define(query)
 
     results.map{ |text|
-      self.shorten(text, 100)
+      self.shorten(text, 400)
     }.flatten
   end
 
