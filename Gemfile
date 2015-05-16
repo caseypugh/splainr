@@ -16,6 +16,7 @@ gem 'google-api-client'
 gem 'wikipedia-client'
 gem 'wikicloth'
 gem 'twilio-ruby', '~> 4.1.0'
+# gem 'chatterbot'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

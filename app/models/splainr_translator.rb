@@ -2,6 +2,21 @@ class SplainrTranslator
   
   def self.execute(query)
     search = Search.new
-    search.define(query)
+    results = search.define(query)
+
+    results.map{ |text|
+      self.shorten(text, 100)
+    }.flatten
+  end
+
+  def self.shorten(text, length)
+    if text.split(' ').count > length
+      explosion = text.split(' ')
+      arr1 = explosion[0, length].join(' ') + '...'
+      arr2 = self.shorten(explosion[length, explosion.size].join(' '), length)
+      return [arr1, arr2]
+    else
+      text
+    end
   end
 end

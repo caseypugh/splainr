@@ -22,7 +22,7 @@ class Dictionary
     },
     { 
       name: ['bechdel test', 'the bechdel test'], 
-      definition: "The Bechdel test is a way to find out if a movie or TV show has well-written female characters. Wait you’ve heard of this before? How did you become acquainted with the idea of sexism? I didn’t think you knew about it. "
+      definition: "The Bechdel test is a way to find out if a movie or TV show has well-written female characters. Wait you’ve heard of this before? How did you become acquainted with the idea of sexism? I didn’t think you knew about it."
     },
     { 
       name: ['body image', 'body positive', 'weight loss'], 

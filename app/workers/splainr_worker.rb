@@ -10,8 +10,7 @@ class SplainrWorker
       sleep sleep_timer
       puts "TEXTING #{phone_number} #{text}"
       TwilioWorker.new.perform(phone_number, text)
-      sleep_timer += 2
-      sleep_timer += 4 if sleep_timer >= 2
+      sleep_timer += 2 
     end
   end
 end
