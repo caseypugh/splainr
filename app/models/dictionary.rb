@@ -43,6 +43,10 @@ class Dictionary
       definition: "Hey just so you know, in baseball the idea is to get all the way AROUND the bases. That’s how the game works. And the starting lineup for the Yankees is obviously Ellsbury, Gardner, Rodriguez, Teixeira, McCann, Beltran, Headley, Drew. And duh, Gregorius. "
     },
     {
+      name: %w{how to demo an app},
+      definition: %{I’m just going to stop you right there. It’s so nice that you were playing around with “technology,” but basically anyone who knows anything about app demos, knows that it’s about showing AND telling. But you probably didn’t know that, did you?}
+    },
+    {
       name: ['comedy', 'jokes', 'real comedy'],
       definition: [
         'I didn’t really hear that last thing you said because I was thinking about all the the stuff I want to say about comedy.', 
