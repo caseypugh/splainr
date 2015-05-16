@@ -7,7 +7,7 @@ gem 'twilio-ruby', '~> 4.1.0'
 gem 'json', '~> 1.0'
 gem 'dalli', '~> 2.0'
 gem 'redis', '~> 3.0'
-gem 'sidekiq-pro', '~> 1.0'
+gem 'sidekiq'
 gem 'foundation-rails'
 
 group :assets do
