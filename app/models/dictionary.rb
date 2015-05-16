@@ -3,9 +3,10 @@ class Dictionary
   DB = [
     { 
       name: %w{feminism feminist feminists}, 
-      definition: ['Ok. Here’s the thing about feminism. Yes, it’s a movement for equal rights. But everyone knows that you could put that energy to better use. Yeah there’s a wage gap and absurdly low numbers of female representatives in politics, but maybe you’re just taking it wrong! And those are hardly important problems in today’s world, if you compare them to poverty in Africa, or pollution, or human trafficking. Anyway, the sexism that we have today is just the leftovers of, like, two thousand years of patriarchy! It can’t just change overnight, you know! And hey, it’s probably going to take another two thousand years before mentalities completely change. So why bother trying?', 'Everyone’s real problem with modern feminism is that it’s so angry. Maybe if you were nicer, your point would be more widely accepted.']
-
-} 
+      definition: [
+        'Ok. Here’s the thing about feminism. Yes, it’s a movement for equal rights. But everyone knows that you could put that energy to better use. Yeah there’s a wage gap and absurdly low numbers of female representatives in politics, but maybe you’re just taking it wrong! And those are hardly important problems in today’s world, if you compare them to poverty in Africa, or pollution, or human trafficking. Anyway, the sexism that we have today is just the leftovers of, like, two thousand years of patriarchy! It can’t just change overnight, you know! And hey, it’s probably going to take another two thousand years before mentalities completely change. So why bother trying?', 
+        'Everyone’s real problem with modern feminism is that it’s so angry. Maybe if you were nicer, your point would be more widely accepted.'
+      ]
     },
     { 
       name: %w{mansplainer}, 
@@ -37,7 +38,10 @@ class Dictionary
     },
     {
       name: ['comedy', 'jokes', 'real comedy'],
-      definition: ['I didn’t really hear that last thing you said because I was thinking about all the the stuff I want to say about comedy.', 'o as you probably don’t know, comedy is any discourse generally intended to be humorous or to amuse by inducing laughter. Let me paint you a picture: Satire and political satire use comedy to portray persons or social institutions as ridiculous or corrupt. That’s why, like, if you think a joke is offensive, you’re probably just not listening to it for its subversive message, you know? And you have to just accept that everything that a stand-up comic writes is coming from a good intentions, and is probably a great joke. '
+      definition: [
+        'I didn’t really hear that last thing you said because I was thinking about all the the stuff I want to say about comedy.', 
+        'So as you probably don’t know, comedy is any discourse generally intended to be humorous or to amuse by inducing laughter. Let me paint you a picture: Satire and political satire use comedy to portray persons or social institutions as ridiculous or corrupt. That’s why, like, if you think a joke is offensive, you’re probably just not listening to it for its subversive message, you know? And you have to just accept that everything that a stand-up comic writes is coming from a good intentions, and is probably a great joke.'
+      ]
     },
     {
       name: %{are women funny},
@@ -67,22 +71,23 @@ class Dictionary
     "And that's not all I could say.",
     "Oh that's what you just said? Your idea sounds so much better when I rephrase it.",
     "If you didn’t get all that, just ask your dad about it. "
-    
   ]
+
   PHONE = [
     { 
       name: ['beer', 'beers','craft beer'], 
       definition: %{asldfj}
-      
+    }
   ]
-
-} 
 
   def self.lookup(name)
     name = name.downcase.strip
 
     DB.each do |entry|
-      return entry[:definition] if entry[:name].map{|name|name.downcase }.include?(name)
+      entry[:name] = entry[:name].class == String ? [entry[:name]] : entry[:name]
+      if entry[:name].map{ |name| name.downcase }.include?(name)
+        return entry[:definition].class == String ? [entry[:definition]] : entry[:definition]
+      end
     end
     
     nil
