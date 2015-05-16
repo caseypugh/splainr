@@ -35,7 +35,8 @@ class Dictionary
       name: ['deflategate', 'Tom Brady', 'The Patriots', 'football'], 
       definition: [
         'Oh you want to hear about Deflategate? Yeah that’s a sports things, so I didn’t know if that’s really what you were asking about at first.', 
-      'This might be over your head, but Deflategate is a NFL controversy, stemming from an allegation that the New England Patriots used underinflated footballs in an AFC Championship game. Just so you know, in football the idea is to get the ball to the endzone. That’s how the points happen.'
+        'This might be over your head, but Deflategate is a NFL controversy, stemming from an allegation that the New England Patriots used underinflated footballs in an AFC Championship game. Just so you know, in football the idea is to get the ball to the endzone. That’s how the points happen.'
+      ]
     },
     { 
       name: ['New York Yankees', 'Yankees lineup','baseball'], 
