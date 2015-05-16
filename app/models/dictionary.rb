@@ -53,6 +53,11 @@ class Dictionary
     {
       name: 'are women funny',
       definition: ['hahahahha', 'Ask me about real comedy some time.']
+    },
+    { 
+      phone: true,
+      name: %{gender}, 
+      definition: %{This is pretty complex, so I thought I’d call. You know what sucks about being a woman? The pay gap. The cool thing? Having boobs and being able to have sex whenever you want. Everyone knows that.}
     }
   ]
 
@@ -80,12 +85,7 @@ class Dictionary
     "If you didn’t get all that, just ask your dad about it. "
   ]
 
-  PHONE = [
-    { 
-      name: %{gender}, 
-      definition: %{This is pretty complex, so I thought I’d call. You know what sucks about being a woman? The pay gap. The cool thing? Having boobs and being able to have sex whenever you want. Everyone knows that.}
-    }
-  ]
+  IS_PHONE = 'phonezone!!!!!'
 
   def self.lookup(name)
     name = name.downcase.strip
@@ -93,7 +93,12 @@ class Dictionary
     DB.each do |entry|
       entry[:name] = entry[:name].class == String ? [entry[:name]] : entry[:name]
       if entry[:name].map{ |name| name.downcase }.include?(name)
-        return entry[:definition].class == String ? [entry[:definition]] : entry[:definition]
+        rsp = entry[:definition].class == String ? [entry[:definition]] : entry[:definition]
+        if entry[:phone] == true
+          return [IS_PHONE] + rsp
+        else
+          return rsp
+        end
       end
     end
     

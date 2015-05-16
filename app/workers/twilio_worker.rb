@@ -1,10 +1,10 @@
 class TwilioWorker
   include Sidekiq::Worker
 
-  def perform(phone_number, message, type = 'text')
+  def perform(phone_number, message, is_phone = false)
     client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN'] 
  
-    if type == 'test'
+    if !is_phone
       client.account.messages.create({
         from: '+19177467982', 
         to:   phone_number, 

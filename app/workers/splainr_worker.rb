@@ -6,10 +6,14 @@ class SplainrWorker
     translation = SplainrTranslator::execute(query)
 
     sleep_timer = 0
+    is_phone = false
+
     translation.each do |text|
+      is_phone = true and next if text == Dictionary::IS_PHONE
+
       sleep sleep_timer
-      puts "TEXTING #{phone_number} #{text}"
-      TwilioWorker.new.perform(phone_number, text)
+      puts "#{is_phone ? 'CALLING' : 'TEXTING'} #{phone_number} #{text}"
+      TwilioWorker.new.perform(phone_number, text, is_phone)
       sleep_timer += 2 
     end
   end
