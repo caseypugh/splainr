@@ -37,7 +37,6 @@ protected
           data: paragraph[1],
           params: {} 
         })
-        
         return Sanitize.fragment(wiki.to_html).strip.gsub(/\[\d+\]/,'')
       end
     end
