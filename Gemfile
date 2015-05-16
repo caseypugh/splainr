@@ -3,12 +3,17 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.21'
 gem 'pg'
 
-gem 'twilio-ruby', '~> 4.1.0'
 gem 'json', '~> 1.0'
 gem 'dalli', '~> 2.0'
 gem 'redis', '~> 3.0'
 gem 'sidekiq'
+gem 'sanitize'
 gem 'foundation-rails'
+
+gem 'google-api-client'
+gem 'wikipedia-client'
+gem 'wikicloth'
+gem 'twilio-ruby', '~> 4.1.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
